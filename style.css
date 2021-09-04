@@ -1,0 +1,173 @@
+/* 
+==============
+Reset CSS
+==============
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* 
+=======================
+Variables declaration
+=======================
+*/
+:root {
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+}
+
+/* 
+======================
+Global style
+======================
+*/
+body {
+  background-color: var(--very-dark-blue);
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--white);
+  line-height: 1.5;
+}
+
+p {
+  font-size: 15px;
+  color: var(--slightly-transparent-white);
+}
+
+/* 
+======================
+Specific style
+======================
+*/
+.desktop-img-container {
+  display: none;
+}
+
+.mobile-img-container {
+  height: 300px;
+}
+
+.mobile-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  background-color: rgba(118, 31, 168, 0.7);
+  height: 100%;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  position: relative;
+  background-color: var(--dark-desaturated-blue);
+  border-radius: 10px;
+}
+
+.card-info {
+  text-align: center;
+  height: 100%;
+  padding-bottom: 1.5rem;
+  border-radius: 0 0 10px 10px;
+}
+
+.title,
+.description {
+  width: 70%;
+  margin: 1.5rem auto;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 8px;
+}
+
+.digits {
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--soft-violet);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* 
+=================
+Responsiveness
+=================
+*/
+@media (min-width: 700px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .mobile-img-container {
+    display: none;
+  }
+
+  .desktop-img-container {
+    display: block;
+  }
+
+  .desktop-img {
+    height: 100%;
+    max-width: 100%;
+    border-radius: 0 10px 10px 0;
+  }
+  .card-container {
+    display: inline-block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 80vw;
+    border-radius: 10px;
+  }
+
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .digits-container {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 2rem;
+  }
+
+  .overlay {
+    border-radius: 0 10px 10px 0;
+  }
+}
